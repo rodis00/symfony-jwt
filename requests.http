@@ -1,0 +1,17 @@
+# get cars request
+
+curl -X GET 
+http://192.168.0.20:8000/api/car
+
+curl -X GET 
+-H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTU4NzkyNDcsImV4cCI6MTcxNTg4Mjg0Nywicm9sZXMiOlsiSVNfQVVUSEVOVElDQVRFRF9GVUxMWSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InRlc3RAZXhhbXBsZS5jb20ifQ.sWnrVpPUhzPyT6keQzysuMJKN6Cfyg9-wzxblBMbry4Q2GTZJP67K1BVGO8oXDL2NWeXkbh4aYVjQf3ERU9usLo38-Ncwz3wj9USqN9N2UO1Eqb8pFjxUU5rJ_nmFOEfv1-c96dxrYCNeMnY12oBd35q_6L75Mh975SroL0mheOsnkeHipE0zu2eeMm1xD4BfvK9zYhb1SK4QFSPsJk8MbpjKD_Hqow6U-TJDdRjPL-2vcVwQ7qz4sDjS7mZkYnbdwH8XSd408TK_gD7GsMRAlQR0YLWNjw01lvGt0yc53HQHSu03fC3_2dA8hhLdh-8WIkHqjZjs92GOyVC2Xq9dw" 
+http://192.168.0.20:8000/api/car
+
+
+
+# login user request
+
+curl -X POST 
+-H "Content-Type: application/json" 
+-d '{"username": "test@example.com", "password": "test123"}' 
+http://192.168.0.20:8000/api/login_check
