@@ -2,20 +2,25 @@
 curl -X GET 
 http://192.168.0.20:8000/api/car
 
+@invalidToken = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTYxOTc0OTcsImV4cCI6MTcxNjIwMTA5Nywicm9sZXMiOlsiSVNfQVVUSEVOVElDQVRFRF9GVUxMWSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InRlc3RAZXhhbXBsZS5jb20ifQ.FZ_qWL3j05aqm-iewXpwfh1fnZccI7U7OhOxQkx6MMcmffe7Sy3aKEz7pcUS-EBVndaq3LsPuP-POAhlnWTF_hekbau3_wvAaBd9pKcT3mCMhS995l6MTJ3hE5hHqkPw7tApvRY8UROg7x1_KQALmw0y5bEASIZ-jI-eMj297zNJkm1qDJVYiq2sa-oYI6msXPt4wZ9uXzZ0emeC0hnpCU_j6Cd0UJe0oxeWJjJEeDXNwsmW2L1wDhM937dmJeCqJXpiVfcWK_nH2FgfjQkGWc3iD979R6J9ERxLbJHwHUreBVdEmVnblG5J-MBqqV7idjtQiWrcv2m7aXGfz0gJWwaaaa"
+
+@token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTYxOTc0OTcsImV4cCI6MTcxNjIwMTA5Nywicm9sZXMiOlsiSVNfQVVUSEVOVElDQVRFRF9GVUxMWSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InRlc3RAZXhhbXBsZS5jb20ifQ.FZ_qWL3j05aqm-iewXpwfh1fnZccI7U7OhOxQkx6MMcmffe7Sy3aKEz7pcUS-EBVndaq3LsPuP-POAhlnWTF_hekbau3_wvAaBd9pKcT3mCMhS995l6MTJ3hE5hHqkPw7tApvRY8UROg7x1_KQALmw0y5bEASIZ-jI-eMj297zNJkm1qDJVYiq2sa-oYI6msXPt4wZ9uXzZ0emeC0hnpCU_j6Cd0UJe0oxeWJjJEeDXNwsmW2L1wDhM937dmJeCqJXpiVfcWK_nH2FgfjQkGWc3iD979R6J9ERxLbJHwHUreBVdEmVnblG5J-MBqqV7idjtQiWrcv2m7aXGfz0gJWw"
+
 # Invalid token
 curl -X GET 
--H "Authorization: Bearer eyJ0asdeXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTU4NzkyNDcsImV4cCI6MTcxNTg4Mjg0Nywicm9sZXMiOlsiSVNfQVVUSEVOVElDQVRFRF9GVUxMWSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InRlc3RAZXhhbXBsZS5jb20ifQ.sWnrVpPUhzPyT6keQzysuMJKN6Cfyg9-wzxblBMbry4Q2GTZJP67K1BVGO8oXDL2NWeXkbh4aYVjQf3ERU9usLo38-Ncwz3wj9USqN9N2UO1Eqb8pFjxUU5rJ_nmFOEfv1-c96dxrYCNeMnY12oBd35q_6L75Mh975SroL0mheOsnkeHipE0zu2eeMm1xD4BfvK9zYhb1SK4QFSPsJk8MbpjKD_Hqow6U-TJDdRjPL-2vcVwQ7qz4sDjS7mZkYnbdwH8XSd408TK_gD7GsMRAlQR0YLWNjw01lvGt0yc53HQHSu03fC3_2dA8hhLdh-8WIkHqjZjs92GOyVC2Xq9dw" 
+-H "Authorization: Bearer {{invalidToken}}" 
 http://192.168.0.20:8000/api/car
 
 # Correct token
 curl -X GET 
--H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTU4NzkyNDcsImV4cCI6MTcxNTg4Mjg0Nywicm9sZXMiOlsiSVNfQVVUSEVOVElDQVRFRF9GVUxMWSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InRlc3RAZXhhbXBsZS5jb20ifQ.sWnrVpPUhzPyT6keQzysuMJKN6Cfyg9-wzxblBMbry4Q2GTZJP67K1BVGO8oXDL2NWeXkbh4aYVjQf3ERU9usLo38-Ncwz3wj9USqN9N2UO1Eqb8pFjxUU5rJ_nmFOEfv1-c96dxrYCNeMnY12oBd35q_6L75Mh975SroL0mheOsnkeHipE0zu2eeMm1xD4BfvK9zYhb1SK4QFSPsJk8MbpjKD_Hqow6U-TJDdRjPL-2vcVwQ7qz4sDjS7mZkYnbdwH8XSd408TK_gD7GsMRAlQR0YLWNjw01lvGt0yc53HQHSu03fC3_2dA8hhLdh-8WIkHqjZjs92GOyVC2Xq9dw" 
+-H "Authorization: Bearer {{token}}" 
 http://192.168.0.20:8000/api/car
+
 
 # register user 
 curl -X POST 
 -H "Content-Type: application/json" 
--d '{"username": "test@example.com", "password": "test123"}' 
+-d '{"email": "test2@example.com", "password": "test123"}' 
 http://192.168.0.20:8000/api/register
 
 # Login user invalid data
@@ -30,7 +35,17 @@ curl -X POST
 -d '{"username": "test@example.com", "password": "test123"}' 
 http://192.168.0.20:8000/api/login_check
 
-# Login user valid data
-curl -X POST 
--H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MTU4NzkyNDcsImV4cCI6MTcxNTg4Mjg0Nywicm9sZXMiOlsiSVNfQVVUSEVOVElDQVRFRF9GVUxMWSIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6InRlc3RAZXhhbXBsZS5jb20ifQ.sWnrVpPUhzPyT6keQzysuMJKN6Cfyg9-wzxblBMbry4Q2GTZJP67K1BVGO8oXDL2NWeXkbh4aYVjQf3ERU9usLo38-Ncwz3wj9USqN9N2UO1Eqb8pFjxUU5rJ_nmFOEfv1-c96dxrYCNeMnY12oBd35q_6L75Mh975SroL0mheOsnkeHipE0zu2eeMm1xD4BfvK9zYhb1SK4QFSPsJk8MbpjKD_Hqow6U-TJDdRjPL-2vcVwQ7qz4sDjS7mZkYnbdwH8XSd408TK_gD7GsMRAlQR0YLWNjw01lvGt0yc53HQHSu03fC3_2dA8hhLdh-8WIkHqjZjs92GOyVC2Xq9dw" 
+
+# Get jwt payload valid token
+curl -X GET 
+-H "Authorization: Bearer {{token}}" 
+http://192.168.0.20:8000/api/jwt/payload
+
+# Get jwt payload invalid token
+curl -X GET 
+-H "Authorization: Bearer {{invalidToken}}" 
+http://192.168.0.20:8000/api/jwt/payload
+
+# Get jwt payload no token
+curl -X GET 
 http://192.168.0.20:8000/api/jwt/payload
